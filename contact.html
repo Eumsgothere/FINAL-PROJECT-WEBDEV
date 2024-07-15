@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Me</title>
+  <link rel="stylesheet" href="contactstyle.css">
+  <style type="text/css" id="operaUserStyle"></style>
+</head>
+<body>
+  <form id="myForm" onsubmit="handleSubmit(event)" style="background: rgba(0, 0, 0, 0.5); padding: 2.6rem 3.6rem; text-align: center; display: flex; flex-direction: column; border-radius: 1.3rem;">
+    <img src="Logo BokSquared.png" alt="Website Logo" width="300" height="100">
+    <h3>CREATE NEW ACCOUNT TO MESSAGE ME</h3>
+    <div class="inputBox" style="position: relative; width: 300px; margin-bottom: 40px;">
+      <label for="username">USERNAME</label>
+      <input type="text" name="username" required style="width: 100%; padding: 0 6px; height: 60px; box-sizing: border-box; font-family: 'Poppins', sans-serif;">
+    </div>
+    <div class="inputBox" style="position: relative; width: 300px; margin-bottom: 40px;">
+      <label for="email">EMAIL</label>
+      <input type="email" name="email" required style="width: 100%; padding: 0 6px; height: 60px; box-sizing: border-box; font-family: 'Poppins', sans-serif;">
+    </div>
+    <div class="inputBox" style="position: relative; width: 300px; margin-bottom: 40px;">
+      <label for="password">CREATE PASSWORD</label>
+      <input type="password" name="password" required style="width: 100%; padding: 0 6px; height: 60px; box-sizing: border-box; font-family: 'Poppins', sans-serif;">
+    </div>
+    <div class="inputBox" style="position: relative; width: 300px; margin-bottom: 40px;">
+      <label for="confirm-password">CONFIRM PASSWORD</label>
+      <input type="password" name="confirm-password" required style="width: 100%; padding: 0 6px; height: 60px; box-sizing: border-box; font-family: 'Poppins', sans-serif;">
+    </div>
+    <div class="inputBox" style="position: relative; width: 300px; margin-bottom: 40px;">
+      <input type="submit" value="Create" style="width: 100%; padding: 0 6px; height: 60px; box-sizing: border-box; font-family: 'Poppins', sans-serif;">
+    </div>
+    <p>Already have an account? <a href="https://formsubmit.co/el/fiifuw0">Login</a></p>
+  </form>
+
+  <script>
+    function handleSubmit(event) {
+      event
