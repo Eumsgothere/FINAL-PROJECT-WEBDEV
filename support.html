@@ -2,15 +2,51 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Unhinged Gaming Guides</title>
   <link rel="icon" type="image/x-icon" href="logo.png">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="buttons.css">
-  <link rel="stylesheet" href="contactstyle.css">
-  <style type="text/css" id="operaUserStyle"></style>
+  <style>
+    /* Additional CSS for the form */
+    #myForm {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 2.6rem 3.6rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      border-radius: 1.3rem;
+    }
+
+    .inputBox {
+      position: relative;
+      width: 300px;
+      margin-bottom: 40px;
+    }
+
+    .inputBox input {
+      width: 100%;
+      padding: 0 6px;
+      height: 60px;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .inputBox label {
+      color: white;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 0 6px;
+      height: 60px;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
 </head>
 <body>
-
 <div id="wrapper-div">
   <div id="headerbanner-div">
     <img src="header.png" alt="website's header">
@@ -90,45 +126,10 @@
       <p>Contact us: 09123456789</p>
       <p>Email: eumie.capapas@gmail.com</p>
       <p>Website by: Naomie Feona G. Capapas</p>
-      <a href="contact.html">
-        <button style="width:auto;">Contact</button>
-      </a>
+      <p><button onclick="location.href='contact.html'" style="width:auto;">Contact Me</button></p>
     </div>
   </div>
 </div>
-
-<!-- Contact Page -->
-<div id="contact-container" style="display:none;">
-  <form id="form" onsubmit="handleSubmit(event)">
-    <img src="Logo BokSquared.png" alt="Website Logo" width="300" height="100">
-    <h3></h3>
-    <div class="inputBox"></div>
-    <div class="inputBox"></div>
-    <div class="inputBox"></div>
-    <div class="inputBox"></div>
-    <div class="inputBox"></div>
-    <div class="inputBox"></div>
-    <p>Already have an account? <a href="https://formsubmit.co/el/fiifuw0">Login</a></p>
-  </form>
-</div>
-
-<script>
-function handleSubmit(event) {
-  event.preventDefault(); // Prevent the default form submission
-  window.location.href = 'https://formsubmit.co/el/fiifuw0'; // Redirect to the desired URL
-
-  let label = document.querySelectorAll('label')
-    .forEach(label => {
-      label.innerHTML = label.innerText.split('').map((letters, i) => 
-        `<span style="transition-delay:${i * 50}ms">${letters}</span>`).join('');
-    });
-}
-
-// Show the contact form container
-document.querySelector('button[style="width:auto;"]').onclick = function() {
-  document.getElementById('contact-container').style.display = 'block';
-}
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
