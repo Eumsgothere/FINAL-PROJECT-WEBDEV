@@ -32,12 +32,60 @@ document.addEventListener("DOMContentLoaded", () => {
         createAccountForm.classList.add("form--hidden");
     });
 
-    loginForm.addEventListener("submit", e => {
+    loginForm.addEventListener("submit", async e => {
         e.preventDefault();
 
-        // Perform your AJAX/Fetch login
+        const username = document.querySelector("#loginUsername").value;
+        const password = document.querySelector("#loginPassword").value;
 
-        setFormMessage(loginForm, "error", "Invalid username/password combination");
+        try {
+            const response = await fetch('/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ username, password }),
+            });
+            const data = await response.json();
+
+            if (data.success) {
+                setFormMessage(loginForm, "success", "Login successful!");
+            } else {
+                setFormMessage(loginForm, "error", "Invalid username/password combination");
+            }
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    });
+
+    createAccountForm.addEventListener("submit", async e => {
+        e.preventDefault();
+
+        const signupUsername = document.querySelector("#signupUsername").value;
+        const signupEmail = document.querySelector("#signupEmail").value;
+        const signupPassword = document.querySelector("#signupPassword").value;
+        const signupConfirmPassword = document.querySelector("#signupConfirmPassword").value;
+
+        try {
+            const response = await fetch('/signup', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ signupUsername, signupEmail, signupPassword, signupConfirmPassword }),
+            });
+            const data = await response.json();
+
+            if (data.success) {
+                setFormMessage(createAccountForm, "success", "Account created successfully. Please log in.");
+                createAccountForm.classList.add("form--hidden");
+                loginForm.classList.remove("form--hidden");
+            } else {
+                setFormMessage(createAccountForm, "error", data.message);
+            }
+        } catch (error) {
+            console.error('Error:', error);
+        }
     });
 
     document.querySelectorAll(".form__input").forEach(inputElement => {
