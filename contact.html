@@ -4,35 +4,73 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Me</title>
-  <link rel="stylesheet" href="contactstyle.css">
-  <style type="text/css" id="operaUserStyle"></style>
+  <link rel="icon" type="image/x-icon" href="logo.png">
+ <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="buttons.css">
+  <style>
+    element.style {
+    }
+
+    .inputBox {
+      position: relative;
+      width: 300px;
+      margin-bottom: 40px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    user agent stylesheet
+    div {
+      display: block;
+      unicode-bidi: isolate;
+    }
+
+    form {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 60px 80px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      border-radius: 10px;
+    }
+  </style>
 </head>
 <body>
-  <form id="myForm" onsubmit="handleSubmit(event)" style="background: rgba(0, 0, 0, 0.5); padding: 2.6rem 3.6rem; text-align: center; display: flex; flex-direction: column; border-radius: 1.3rem;">
-    <img src="Logo BokSquared.png" alt="Website Logo" width="300" height="100">
+  <form id="myForm" onsubmit="handleSubmit(event)">
+    <img src="head.png" alt="Website Logo" width="300" height="100">
     <h3>CREATE NEW ACCOUNT TO MESSAGE ME</h3>
-    <div class="inputBox" style="position: relative; width: 300px; margin-bottom: 40px;">
+    <div class="inputBox">
       <label for="username">USERNAME</label>
-      <input type="text" name="username" required style="width: 100%; padding: 0 6px; height: 60px; box-sizing: border-box; font-family: 'Poppins', sans-serif;">
+      <input type="text" name="username" required>
     </div>
-    <div class="inputBox" style="position: relative; width: 300px; margin-bottom: 40px;">
+    <div class="inputBox">
       <label for="email">EMAIL</label>
-      <input type="email" name="email" required style="width: 100%; padding: 0 6px; height: 60px; box-sizing: border-box; font-family: 'Poppins', sans-serif;">
+      <input type="email" name="email" required>
     </div>
-    <div class="inputBox" style="position: relative; width: 300px; margin-bottom: 40px;">
+    <div class="inputBox">
       <label for="password">CREATE PASSWORD</label>
-      <input type="password" name="password" required style="width: 100%; padding: 0 6px; height: 60px; box-sizing: border-box; font-family: 'Poppins', sans-serif;">
+      <input type="password" name="password" required>
     </div>
-    <div class="inputBox" style="position: relative; width: 300px; margin-bottom: 40px;">
+    <div class="inputBox">
       <label for="confirm-password">CONFIRM PASSWORD</label>
-      <input type="password" name="confirm-password" required style="width: 100%; padding: 0 6px; height: 60px; box-sizing: border-box; font-family: 'Poppins', sans-serif;">
+      <input type="password" name="confirm-password" required>
     </div>
-    <div class="inputBox" style="position: relative; width: 300px; margin-bottom: 40px;">
-      <input type="submit" value="Create" style="width: 100%; padding: 0 6px; height: 60px; box-sizing: border-box; font-family: 'Poppins', sans-serif;">
+    <div class="inputBox">
+      <input type="submit" value="Create">
     </div>
     <p>Already have an account? <a href="https://formsubmit.co/el/fiifuw0">Login</a></p>
   </form>
 
   <script>
     function handleSubmit(event) {
-      event
+      event.preventDefault(); // Prevent the default form submission
+      window.location.href = 'https://formsubmit.co/el/fiifuw0'; // Redirect to the desired URL
+    }
+  </script>
+</body>
+</html>
