@@ -5,18 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Me</title>
   <link rel="icon" type="image/x-icon" href="logo.png">
- <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="buttons.css">
   <style>
-    element.style {
-    }
-
-    .inputBox {
-      position: relative;
-      width: 300px;
-      margin-bottom: 40px;
-    }
-
     * {
       margin: 0;
       padding: 0;
@@ -24,25 +15,73 @@
       font-family: 'Poppins', sans-serif;
     }
 
-    user agent stylesheet
-    div {
-      display: block;
-      unicode-bidi: isolate;
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
     }
 
     form {
       background: rgba(0, 0, 0, 0.5);
       padding: 60px 80px;
       text-align: center;
-      display: flex;
-      flex-direction: column;
       border-radius: 10px;
+      width: 80%;
+      max-width: 400px;
+    }
+
+    form img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    .inputBox {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .inputBox label {
+      display: block;
+      margin-bottom: 5px;
+      color: white;
+    }
+
+    .inputBox input {
+      width: 100%;
+      padding: 8px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .inputBox input[type="submit"] {
+      background-color: #2e70ab;
+      color: white;
+      cursor: pointer;
+    }
+
+    .inputBox input[type="submit"]:hover {
+      background-color: #3e8e41;
+    }
+
+    p {
+      margin-top: 20px;
+      color: white;
+    }
+
+    p a {
+      color: white;
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
   <form id="myForm" onsubmit="handleSubmit(event)">
-    <img src="head.png" alt="Website Logo" width="300" height="100">
+    <img src="head.png" alt="Website Logo">
     <h3>CREATE NEW ACCOUNT TO MESSAGE ME</h3>
     <div class="inputBox">
       <label for="username">USERNAME</label>
@@ -63,7 +102,7 @@
     <div class="inputBox">
       <input type="submit" value="Create">
     </div>
-    <p>Already have an account? <a href="https://formsubmit.co/el/cukewo" target="_blank">Email us</a>">Login</a></p>
+    <p>Already have an account? <a href="https://formsubmit.co/el/cukewo" target="_blank">Login</a></p>
   </form>
 
   <script>
