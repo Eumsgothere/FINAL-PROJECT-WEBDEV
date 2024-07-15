@@ -6,6 +6,8 @@
   <link rel="icon" type="image/x-icon" href="logo.png">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="buttons.css">
+  <link rel="stylesheet" href="contactstyle.css">
+  <style type="text/css" id="operaUserStyle"></style>
 </head>
 <body>
 
@@ -88,45 +90,44 @@
       <p>Contact us: 09123456789</p>
       <p>Email: eumie.capapas@gmail.com</p>
       <p>Website by: Naomie Feona G. Capapas</p>
-      <button onclick="document.getElementById('contact-form').style.display='block'" style="width:auto;">Contact</button>
+      <a href="contact.html">
+        <button style="width:auto;">Contact</button>
+      </a>
     </div>
   </div>
 </div>
 
-<!-- Contact Form Modal -->
-<div id="contact-form" class="modal">
-  <div class="container">
-    <h1>FormSubmit Demo</h1>
-    <form target="_blank" action="https://formsubmit.co/your@email.com" method="POST">
-      <div class="form-group">
-        <div class="form-row">
-          <div class="col">
-            <input type="text" name="name" class="form-control" placeholder="Full Name" required>
-          </div>
-          <div class="col">
-            <input type="email" name="email" class="form-control" placeholder="Email Address" required>
-          </div>
-        </div>
-      </div>
-      <div class="form-group">
-        <textarea placeholder="Your Message" class="form-control" name="message" rows="10" required></textarea>
-      </div>
-      <button type="submit" class="btn btn-lg btn-dark btn-block">Submit Form</button>
-      <button type="button" onclick="document.getElementById('contact-form').style.display='none'" class="btn cancel">Cancel</button>
-    </form>
-  </div>
+<!-- Contact Page -->
+<div id="contact-container" style="display:none;">
+  <form id="form" onsubmit="handleSubmit(event)">
+    <img src="Logo BokSquared.png" alt="Website Logo" width="300" height="100">
+    <h3></h3>
+    <div class="inputBox"></div>
+    <div class="inputBox"></div>
+    <div class="inputBox"></div>
+    <div class="inputBox"></div>
+    <div class="inputBox"></div>
+    <div class="inputBox"></div>
+    <p>Already have an account? <a href="https://formsubmit.co/el/fiifuw0">Login</a></p>
+  </form>
 </div>
 
 <script>
-  // Get the modal
-  var modal = document.getElementById('contact-form');
+function handleSubmit(event) {
+  event.preventDefault(); // Prevent the default form submission
+  window.location.href = 'https://formsubmit.co/el/fiifuw0'; // Redirect to the desired URL
 
-  // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  }
+  let label = document.querySelectorAll('label')
+    .forEach(label => {
+      label.innerHTML = label.innerText.split('').map((letters, i) => 
+        `<span style="transition-delay:${i * 50}ms">${letters}</span>`).join('');
+    });
+}
+
+// Show the contact form container
+document.querySelector('button[style="width:auto;"]').onclick = function() {
+  document.getElementById('contact-container').style.display = 'block';
+}
 </script>
 
 </body>
