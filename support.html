@@ -8,163 +8,52 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="buttons.css">
   <style>
-    /* General styling */
-    body {
+    /* Additional CSS for the form */
+    #myForm {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 2.6rem 3.6rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      border-radius: 1.3rem;
+    }
+
+    .inputBox {
+      position: relative;
+      width: 300px;
+      margin-bottom: 40px;
+    }
+
+    .inputBox input {
+      width: 100%;
+      padding: 0 6px;
+      height: 60px;
+      box-sizing: border-box;
       font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      background-color: #f0f0f0;
     }
 
-    #wrapper-div {
-      width: 90%;
-      max-width: 1200px;
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      overflow: hidden;
-    }
-
-    /* Header styling */
-    #headerbanner-div {
-      background: url('header.png') center/cover no-repeat;
-      height: 200px;
-    }
-
-    /* Main content styling */
-    #main1-div {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px;
-    }
-
-    #logo-div {
-      flex: 1;
-    }
-
-    #logo-div a {
+    .inputBox label {
       color: white;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
+      font-family: 'Poppins', sans-serif;
     }
 
-    #logo-div img {
-      height: 50px;
-      margin-right: 10px;
-    }
-
-    #nav-div {
-      flex: 2;
-      text-align: right;
-    }
-
-    #nav-div a {
-      margin-left: 20px;
-      color: #333;
-      text-decoration: none;
-    }
-
-    #sidebar {
-      background-color: #333;
-      color: white;
-      padding: 10px;
-      width: 200px;
-      position: sticky;
-      top: 0;
-      height: calc(100vh - 200px);
-      overflow-y: auto;
-    }
-
-    #sidebar a {
-      display: block;
-      padding: 10px;
-      color: white;
-      text-decoration: none;
-    }
-
-    /* Content area styling */
-    #reco-div {
-      padding: 20px;
-    }
-
-    .support-container {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
-      padding: 20px;
-    }
-
-    .support-container h1, .support-container h2 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .faq-container {
-      text-align: left;
-    }
-
-    .faq {
-      margin-bottom: 30px;
-    }
-
-    .faq h3 {
-      color: #2e70ab;
-      margin-bottom: 10px;
-    }
-
-    .faq p {
-      color: #666;
-    }
-
-    /* Footer styling */
-    #footer-div {
-      background-color: #333;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-
-    .footer-text {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .footer-text p {
-      margin-bottom: 10px;
-    }
-
-    /* Button styling */
-    button {
-      background-color: #2e70ab;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      cursor: pointer;
-      border-radius: 5px;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 10px;
-    }
-
-    button:hover {
-      background-color: #3e8e41;
+    .btn {
+      width: 100%;
+      padding: 0 6px;
+      height: 60px;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
     }
   </style>
 </head>
 <body>
-
 <div id="wrapper-div">
-  <div id="headerbanner-div"></div>
-
+  <div id="headerbanner-div">
+    <img src="header.png" alt="website's header">
+  </div>
   <div id="main1-div" class="clearfix">
     <div id="logo-div">
-      <a href="index.html">
+      <a href="index.html" style="color: white; text-decoration: none;" target="_blank">
         <img src="head.png" alt="Logo">
         Eumie's Guide to Unhinged Gaming
       </a>
@@ -176,7 +65,7 @@
       <a href="support.html">Support</a>
       <a href="recommendations.html">Recommendations</a>
       <a href="about.html">About Us</a>
-      <a href="signup.html"><button>Sign Up</button></a>
+      <a href="signup.html"><button style="width:auto;">Sign Up</button></a>
     </div>
   </div>
 
@@ -209,21 +98,22 @@
         <!-- Add more FAQs here -->
       </div>
       <h2>Report Problem</h2>
-      <p><button onclick="location.href='contact.html'">Report Here</button></p>
+      <p><button onclick="location.href='contact.html'" style="width:auto;">Report Here</button></p>
+      </div>
+      <!-- End FormSubmit form -->
     </div>
   </div>
-
-  <div id="footer-div">
-    <img src="head.png" alt="Website's Logo">
+ 
+    </div>
+  </div>
+   <div id="footer-div">
+    <img src="head.png" alt="website's Logo">
     <div class="footer-text">
       <p>Contact us: 09123456789</p>
       <p>Email: eumie.capapas@gmail.com</p>
       <p>Website by: Naomie Feona G. Capapas</p>
-      <p><button onclick="location.href='contact.html'">Contact Me</button></p>
-    </div>
-  </div>
+      <p><button onclick="location.href='contact.html'" style="width:auto;">Contact Me</button></p>
 </div>
-
 <script src="script.js"></script>
 </body>
 </html>
